@@ -43,6 +43,7 @@ def move():
         square(body.x, body.y, 9, 'black')
 
     square(food.x, food.y, 9, 'green')
+    # If para que la comida se mueva aleatoriamente
     if insidef(food):
         food.x = food.x + randrange(-1,2) * 10
         food.y = food.y + randrange(-1,2) * 10
