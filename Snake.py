@@ -6,9 +6,11 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+# Sección de colores usados por la serpiente y la comida cada vez que se reinicia el juego.
 colors = ["green","blue","orange","black","pink"]
 shuffle(colors)
 
+# Función que permite mover a la serpiente.
 def change(x, y):
     "Change snake direction."
     aim.x = x
@@ -22,6 +24,7 @@ def insidef(food):
     "Return True if head inside boundaries."
     return -190 < food.x < 180 and -190 < food.y < 180
 
+# Función que le permite al usuario mover a la serpiente con las teclas de dirección.
 def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
