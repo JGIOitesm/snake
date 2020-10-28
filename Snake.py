@@ -11,6 +11,7 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
+# Función mejorada para que el snake y la comida se queden en el tablero.
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
