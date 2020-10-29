@@ -1,7 +1,8 @@
 from turtle import *
 from random import randrange
 from random import shuffle
-from freegames import square, vector
+from freegames import square 
+from freegames import vector
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
@@ -10,22 +11,19 @@ aim = vector(0, -10)
 colors = ["green","blue","orange","black","pink"]
 shuffle(colors)
 
-# Función que permite mover a la serpiente.
-def change(x, y):
+def change(x, y):  # Función que permite mover a la serpiente
     "Change snake direction."
     aim.x = x
     aim.y = y
 
-# Función mejorada para que el snake y la comida se queden en el tablero.
-def inside(head):
+def inside(head):  # Función mejorada para que el snake y la comida se queden en el tablero.
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
 def insidef(food):
     "Return True if head inside boundaries."
     return -190 < food.x < 180 and -190 < food.y < 180
 
-# Función que le permite al usuario mover a la serpiente con las teclas de dirección.
-def move():
+def move():  # Función que le permite al usuario mover a la serpiente con las teclas de dirección.
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
@@ -36,14 +34,12 @@ def move():
         return
 
     snake.append(head)
-
     if head == food:
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
-
     clear()
 
     for body in snake:
