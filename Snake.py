@@ -57,6 +57,7 @@ def move():  # Función que le permite al usuario mover a la serpiente con las t
     update()
     ontimer(move, 100)
 
+# Parámetros del juego.
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
